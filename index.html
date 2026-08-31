@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Insumos — F-05</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TELA DE LOGIN -->
+<div id="telaLogin" class="login-overlay">
+    <div class="login-box">
+        <h2>Acesso ao Sistema</h2>
+        <input type="password" id="senhaAcesso" placeholder="Digite a senha">
+        <p id="msgErro" class="login-error">Senha incorreta!</p>
+        <button class="btn-main" onclick="validarSenha()">Entrar</button>
+    </div>
+</div>
+
+<div class="container">
+    <aside class="route-steps" aria-label="Etapas do fluxo">
+        <span class="step active">1</span><span class="connector"></span>
+        <span class="step">2</span><span class="connector"></span>
+        <span class="step">3</span>
+    </aside>
+
+    <h1>Cálculo de Insumos do Turno</h1>
+    <p class="subtitle">Setor F-05 | 3º Turno</p>
+
+    <div class="form-group">
+        <label for="item">Item Produzido:</label>
+        <select id="item">
+            <option value="caixa_6l">Caixa Térmica 6 Litros</option>
+            <option value="caixa_12l">Caixa Térmica 12 Litros</option>
+            <option value="caixa_18l">Caixa Térmica 18 Litros</option>
+            <option value="caixa_26l">Caixa Térmica 26 Litros</option>
+            <option value="caixa_34l">Caixa Térmica 34 Litros</option>
+            <option value="caixa_42l">Caixa Térmica 45 Litros</option>
+            <option value="gt_use_1l">Garrafa Térmica (GT) Use 1L</option>
+            <option value="cadeira_bistro">Cadeira Bistrô</option>
+            <option value="poltrona">Poltrona</option>
+            <option value="mesa_bela_vista">Mesa Plástica</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ciclo">Tempo de Ciclo (em segundos):</label>
+        <input type="number" id="ciclo" placeholder="Ex: 23.3" min="1" step="0.1">
+    </div>
+
+    <div class="form-group">
+        <label for="horas">Horas Trabalhadas no Turno:</label>
+        <input type="number" id="horas" placeholder="Ex: 7" min="1" step="1">
+    </div>
+
+    <div class="form-group">
+        <label for="margem">Margem de Segurança / Perda:</label>
+        <select id="margem">
+            <option value="1" selected>0% (Sem margem)</option>
+            <option value="1.02">2% de Margem</option>
+            <option value="1.05">5% de Margem</option>
+        </select>
+    </div>
+
+    <button class="btn-main" onclick="calcular()">Calcular Item</button>
+
+    <!-- RESULTADO DO CÁLCULO ATUAL -->
+    <div class="result-box" id="resultado">
+        <h2>Resultado do Item</h2>
+        <div class="total-boxes" id="totalCaixas"></div>
+        <ul class="material-list" id="listaMateriais"></ul>
+        <button class="btn-add" onclick="adicionarAoAcumulado()">+ Definir/Atualizar na Lista do Turno</button>
+    </div>
+
+    <!-- RESUMO ACUMULADO DO TURNO -->
+    <div class="accumulated-box" id="boxAcumulado">
+        <h2>Total do Turno (Por Produto)</h2>
+        <div id="containerGruposAcumulados"></div>
+        <button class="btn-clear" onclick="limparAcumulado()">Limpar Lista do Turno</button>
+        <button class="btn-main btn-whatsapp" onclick="copiarParaWhatsApp()">Copiar Resumo</button>
+    </div>
+
+    <footer class="creditos">
+        <p><strong>Vinny</strong> @ MOR - Filial Pernambuco</p>
+    </footer>
+</div>
+
+<!-- Modal Universal -->
+<div id="modalApp" class="modal-overlay">
+    <div class="modal-box">
+        <h4 id="modalTitulo">Aviso</h4>
+        <p id="modalMensagem"></p>
+        
+        <div class="modal-actions">
+            <button id="btnModalCancelar">Cancelar</button>
+            <button id="btnModalConfirmar">OK</button>
+        </div>
+    </div>
+</div>
+
+<!-- CARREGAMENTO DOS SCRIPTS -->
+<script src="js/config.js"></script>
+<script src="js/recipes.js"></script>
+<script src="js/domain.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
