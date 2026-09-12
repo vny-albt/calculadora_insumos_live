@@ -5,7 +5,7 @@ const RECEITAS = {
         pecasPorCiclo: 1,
         unidadeMedida: "caixas",
         tipoEmbalagem: "Pallets",
-        qtdPorEmbalagem: 10, // não lembro
+        qtdPorEmbalagem: 87,
         insumos: { 
             "Tampa": 1, 
             "Alça": 1, 
@@ -55,7 +55,7 @@ const RECEITAS = {
         pecasPorCiclo: 1,
         unidadeMedida: "caixas",
         tipoEmbalagem: "Pallets",
-        qtdPorEmbalagem: 21, // Não Lembro
+        qtdPorEmbalagem: 30,
         insumos: { 
             "Tampa": 1, 
             "Alça": 1, 
@@ -149,6 +149,28 @@ const RECEITAS = {
             "Saco": 1/24 
         }
     },
+    "poltroninha": {
+        nome: "Poltroninha",
+        pecasPorCiclo: 1,
+        unidadeMedida: "poltroninhas",
+        tipoEmbalagem: "Pallets",
+        qtdPorEmbalagem: 144, // não sei
+        insumos: { 
+            "Etiqueta": 1, 
+            "Saco": 1/12
+        }
+    },
+    "banqueta": {
+        nome: "Banqueta",
+        pecasPorCiclo: 1,
+        unidadeMedida: "banquetas",
+        tipoEmbalagem: "Gaiolas",
+        qtdPorEmbalagem: 144, // não sei
+        insumos: { 
+            "Etiqueta": 1, 
+            "Saco": 1/12
+        }
+    },
     "mesa_bela_vista": {
         nome: "Mesa Plástica",
         pecasPorCiclo: 1,
@@ -160,6 +182,17 @@ const RECEITAS = {
             "Saco": 1/6, 
             "Tampa": 1, 
             "Chapa": 1/6 
+        }
+    },
+    "mesinha_kids": {
+        nome: "Mesinha Kids",
+        pecasPorCiclo: 1,
+        unidadeMedida: "mesas",
+        tipoEmbalagem: "Gaiolas",
+        qtdPorEmbalagem: 72,
+        insumos: { 
+            "Etiqueta": 1, 
+            "Saco": 1/6,
         }
     }
 };
