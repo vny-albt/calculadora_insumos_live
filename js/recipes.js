@@ -72,7 +72,7 @@ const RECEITAS = {
         pecasPorCiclo: 1,
         unidadeMedida: "caixas",
         tipoEmbalagem: "Pallets",
-        qtdPorEmbalagem: 21, // Eu acho
+        qtdPorEmbalagem: 21,
         insumos: { 
             "Tampa": 1, 
             "Alça": 1, 
