@@ -38,7 +38,7 @@ const RECEITAS = {
         pecasPorCiclo: 1,
         unidadeMedida: "caixas",
         tipoEmbalagem: "Pallets",
-        qtdPorEmbalagem: 21, // Não Lembro
+        qtdPorEmbalagem: 40
         insumos: { 
             "Tampa": 1, 
             "Alça": 1, 
